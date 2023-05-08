@@ -2,11 +2,19 @@
   <main>
     <header>
       <img src="./assets/pinia-logo.svg" alt="pinia logo" />
-      <h1>Pinia Task</h1>
+      <h1>Pinia Tasks</h1>
     </header>
   </main>
 </template>
 
 <script>
-export default {};
+import { useTaskStore } from "./store/TaskStore";
+
+export default {
+  setup() {
+    const taskStore = useTaskStore();
+
+    return { taskStore };
+  },
+};
 </script>
